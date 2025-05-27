@@ -1,0 +1,121 @@
+[
+  {
+    "id": "1",
+    "content": {
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": "Химия принадлежит к числу естественных наук наряду с ботаникой, (... skipped) вода может существовать в трех различных состояниях, а именно в твердом, жидком или газообразном состоянии.",
+          "format": "PLAIN"
+        }
+      ]
+    },
+    "question": {
+      "type": "TEXT_INPUT",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": "Теперь попытайтесь ответить на вопросы ниже, а затем проверьте их, обратившись к следующей рубрике.",
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "inputs": [
+        { "id": "a", "text": "Как называется вода в твердом состоянии?" },
+        { "id": "b", "text": "Как называется вода в газообразном состоянии?" }
+      ],
+      "correctAnswer": null,
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": null, "targetStepId": "8" }
+    ]
+  },
+  {
+    "id": "2",
+    "content": {
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": "Вы совершенно правильно отнесли второй эксперимент к числу физических процессов",
+          "format": "PLAIN"
+        },
+        {
+          "type": "TEXT",
+          "value": "(... skipped)",
+          "format": "PLAIN"
+        }
+      ]
+    },
+    "question": {
+      "type": "INFO_ONLY",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": "Продолжайте чтение со следующей рубрики.",
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "correctAnswer": null,
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": null, "targetStepId": "8" }
+    ]
+  },
+  {
+    "id": "12",
+    "content": {
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": "Если два или несколько веществ соединяются (... skipped)",
+          "format": "PLAIN"
+        },
+        {
+          "type": "TEXT",
+          "value": "рассмотрим описание следующего эксперимента (... skipped)",
+          "format": "PLAIN"
+        }
+      ]
+    },
+    "question": {
+      "type": "CHOICE",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": "Какое из следующих утверждений правильно?",
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "options": [
+        { "id": "43", "text": "2 -> Растирание в ступке представляет собой физический процесс; светло-серый порошок является химическим соединением" },
+        { "id": "29", "text": "Растирание в ступке представляет собой физический процесс; светло-серый порошок не является химическим соединением" }
+      ],
+      "correctAnswer": "29",
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": "CHOICE=43", "targetStepId": "2" },
+      { "condition": "CHOICE=29", "targetStepId": "8" }
+    ]
+  },
+
+
+  {
+    "id": "8",
+    "content": {
+      "blocks": [
+        { "type": "TEXT", "value": "Вы перешли на шаг 8." }
+      ]
+    },
+    "transitions": [
+      { "condition": null, "targetStepId": "12" }
+    ]
+  }
+]

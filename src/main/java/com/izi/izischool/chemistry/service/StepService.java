@@ -2,7 +2,7 @@ package com.izi.izischool.chemistry.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.izi.izischool.chemistry.model.Step;
+import com.izi.izischool.chemistry.model.step.Step;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class StepService {
     public void init() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            InputStream is = getClass().getResourceAsStream("/data/chemistry-module.json");
+            InputStream is = getClass().getResourceAsStream("/data/chemistry-module3.json");
             List<Step> steps = mapper.readValue(is, new TypeReference<>() {});
             for (Step step : steps) {
                 stepsMap.put(step.getId(), step);
