@@ -13,7 +13,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // для всех путей
-                        .allowedOrigins("http://localhost:3000") // разрешить React-фронту
+                        .allowedOrigins("http://localhost:3000", "https://izischool-web.onrender.com") // разрешить React-фронту
                         .allowedMethods("*") // можно GET, POST, PUT и т.д.
                         .allowedHeaders("*");
             }
