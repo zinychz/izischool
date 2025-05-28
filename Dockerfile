@@ -7,14 +7,12 @@ RUN gradle bootJar --no-daemon
 ## Package stage
 FROM openjdk:17-jdk-slim
 
-# Устанавливаем рабочую директорию
+# Set working dir
 WORKDIR /app
 
-# Открываем порт
 EXPOSE 8080
 
-# Копируем собранный jar
+# Copy builded jar
 COPY --from=build /home/gradle/src/build/libs/izischool-0.0.1-SNAPSHOT.jar app.jar
 
-# Точка входа
 ENTRYPOINT ["java", "-jar", "app.jar"]

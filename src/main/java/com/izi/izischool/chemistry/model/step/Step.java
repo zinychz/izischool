@@ -38,7 +38,7 @@ public class Step {
     }
 
     private boolean evaluateCondition(String condition, Map<String, String> answers) {
-        // examples: "a=лед", "CHOICE=29"
+        // examples: "a=ice", "CHOICE=29"
         String[] parts = condition.split(EQUAL_CONDITION);
         if (parts.length != 2) {
             return false;
