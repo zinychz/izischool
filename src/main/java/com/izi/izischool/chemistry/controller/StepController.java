@@ -38,15 +38,20 @@ public class StepController {
         }
 
         boolean correct = true;
-        if (step.getQuestion() != null && step.getQuestion().getCorrectAnswer() != null &&
+        if (step.getQuestion() != null && step.getQuestion().getCorrectAnswer() != null
+                && !step.getQuestion().getCorrectAnswer().getLocalized().isEmpty() &&
                 (QuestionType.CHOICE == step.getQuestion().getType() || QuestionType.TEXT_INPUT == step.getQuestion().getType())) {
-            correct = step.getQuestion().getCorrectAnswer().equalsIgnoreCase(request.getAnswer().trim());
+            correct = step.getQuestion().getCorrectAnswer().getLocalized().entrySet().iterator().next().getValue()
+                    .equalsIgnoreCase(request.getAnswer().trim());
         }
 
         Map<String, String> answers = step.getQuestion() != null && QuestionType.CHOICE == step.getQuestion().getType() ?
                 Map.of(QuestionType.CHOICE.name(), request.getAnswer()) : Map.of(request.getAnswer(), request.getAnswer());
 
-        return new AnswerResponse(correct, step.getQuestion() == null ? null : step.getQuestion().getExplanation(),
+        return new AnswerResponse(correct, step.getQuestion() == null ? null :
+                step.getQuestion().getExplanation() == null ? null :
+                        step.getQuestion().getExplanation().getLocalized().isEmpty() ? null :
+                                step.getQuestion().getExplanation().getLocalized().entrySet().iterator().next().getValue(),
                 step.getNextStepId(answers));
     }
 }

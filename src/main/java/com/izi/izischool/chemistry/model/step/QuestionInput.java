@@ -1,5 +1,6 @@
 package com.izi.izischool.chemistry.model.step;
 
+import com.izi.izischool.chemistry.model.LocalizedText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,5 +8,5 @@ import lombok.Setter;
 @Setter
 public class QuestionInput {
     private String id;
-    private String text;
+    private LocalizedText text;
 }

@@ -19,7 +19,7 @@ public class StepService {
     public void init() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            InputStream is = getClass().getResourceAsStream("/data/chemistry-module3.json");
+            InputStream is = getClass().getResourceAsStream("/data/chemistry-module.json");
             List<Step> steps = mapper.readValue(is, new TypeReference<>() {});
             for (Step step : steps) {
                 stepsMap.put(step.getId(), step);

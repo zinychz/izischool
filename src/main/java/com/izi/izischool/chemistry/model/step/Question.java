@@ -1,5 +1,6 @@
 package com.izi.izischool.chemistry.model.step;
 
+import com.izi.izischool.chemistry.model.LocalizedText;
 import com.izi.izischool.chemistry.model.content.Content;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +15,6 @@ public class Question {
 
     private List<QuestionInput> inputs; // for TEXT_INPUT only
     private List<ChoiceOption> options; // for CHOICE only
-    private String correctAnswer;
-    private String explanation;
+    private LocalizedText correctAnswer;
+    private LocalizedText explanation;
 }

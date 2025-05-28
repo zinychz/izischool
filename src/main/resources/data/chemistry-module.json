@@ -1,70 +1,189 @@
 [
   {
-    "id": "step_001",
-    "type": "multiple_choice",
+    "id": "1",
     "content": {
-      "text": "Как называется самая маленькая частица химического элемента, сохраняющая его свойства?",
-      "media": null
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "RU": "Химия принадлежит к числу естественных наук наряду с ботаникой, (... skipped) вода может существовать в трех различных состояниях, а именно в твердом, жидком или газообразном состоянии.",
+              "EN": "Chemistry is one of the natural sciences along with botany, (... skipped) water can exist in three different states, namely solid, liquid or gaseous."
+            }
+          },
+          "format": "PLAIN"
+        }
+      ]
     },
-    "options": [
-      { "id": "a", "text": "Молекула" },
-      { "id": "b", "text": "Атом" },
-      { "id": "c", "text": "Йон" }
-    ],
-    "correctAnswer": "b",
-    "explanation": "Атом — это наименьшая частица элемента, сохраняющая его химические свойства.",
-    "nextStepId": "step_002"
+    "question": {
+      "type": "TEXT_INPUT",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": {
+              "localized": {
+                "RU": "Теперь попытайтесь ответить на вопросы ниже, а затем проверьте их, обратившись к следующей рубрике."
+              }
+            },
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "id": "a",
+          "text": {
+            "localized": {
+              "RU": "Как называется вода в твердом состоянии?"
+            }
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "localized": {
+              "RU": "Как называется вода в газообразном состоянии?"
+            }
+          }
+        }
+      ],
+      "correctAnswer": null,
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": null, "targetStepId": "8" }
+    ]
   },
   {
-    "id": "step_002",
-    "type": "true_false",
+    "id": "2",
     "content": {
-      "text": "Протоны находятся в ядре атома.",
-      "media": null
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "RU": "Вы совершенно правильно отнесли второй эксперимент к числу физических процессов"
+            }
+          },
+          "format": "PLAIN"
+        },
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "EN": "(... skipped)"
+            }
+          },
+          "format": "PLAIN"
+        }
+      ]
     },
-    "options": [
-      { "id": "true", "text": "Да" },
-      { "id": "false", "text": "Нет" }
-    ],
-    "correctAnswer": "true",
-    "explanation": "Протоны и нейтроны находятся в ядре; электроны — на оболочке.",
-    "nextStepId": "step_003"
+    "question": {
+      "type": "INFO_ONLY",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": {
+              "localized": {
+                "RU": "Продолжайте чтение со следующей рубрики."
+              }
+            },
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "correctAnswer": null,
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": null, "targetStepId": "8" }
+    ]
   },
   {
-    "id": "step_003",
-    "type": "text_input",
+    "id": "12",
     "content": {
-      "text": "Сколько протонов содержит атом углерода (C)?",
-      "media": null
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "RU": "Если два или несколько веществ соединяются (... skipped)"
+            }
+          },
+          "format": "PLAIN"
+        },
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "RU": "рассмотрим описание следующего эксперимента (... skipped)"
+            }
+          },
+          "format": "PLAIN"
+        }
+      ]
     },
-    "correctAnswer": "6",
-    "explanation": "Углерод имеет атомный номер 6 — значит, 6 протонов.",
-    "nextStepId": "step_004"
+    "question": {
+      "type": "CHOICE",
+      "content": {
+        "blocks": [
+          {
+            "type": "TEXT",
+            "value": {
+              "localized": {
+                "RU": "Какое из следующих утверждений правильно?"
+              }
+            },
+            "format": "PLAIN"
+          }
+        ]
+      },
+      "options": [
+        {
+          "id": "43",
+          "text": {
+            "localized": {
+              "RU": "2 -> Растирание в ступке представляет собой физический процесс; светло-серый порошок является химическим соединением"
+            }
+          }
+        },
+        {
+          "id": "29",
+          "text": {
+            "localized": {
+              "RU": "Растирание в ступке представляет собой физический процесс; светло-серый порошок не является химическим соединением"
+            }
+          }
+        }
+      ],
+      "correctAnswer": "29",
+      "explanation": null
+    },
+    "transitions": [
+      { "condition": "CHOICE=43", "targetStepId": "2" },
+      { "condition": "CHOICE=29", "targetStepId": "8" }
+    ]
   },
+
+
   {
-    "id": "step_004",
-    "type": "multiple_choice",
+    "id": "8",
     "content": {
-      "text": "Выбери правильную формулу воды:",
-      "media": null
+      "blocks": [
+        {
+          "type": "TEXT",
+          "value": {
+            "localized": {
+              "RU": "Вы перешли на шаг 8."
+            }
+          }
+        }
+      ]
     },
-    "options": [
-      { "id": "a", "text": "H2" },
-      { "id": "b", "text": "O2" },
-      { "id": "c", "text": "H2O" }
-    ],
-    "correctAnswer": "c",
-    "explanation": "H₂O — два атома водорода и один кислорода — это вода.",
-    "nextStepId": "step_005"
-  },
-  {
-    "id": "step_005",
-    "type": "info_only",
-    "content": {
-      "text": "Отлично! Ты прошёл вводный блок по основам химии. Готов перейти к следующему разделу?",
-      "media": null
-    },
-    "explanation": "Ты можешь повторить раздел или двигаться дальше.",
-    "nextStepId": null
+    "transitions": [
+      { "condition": null, "targetStepId": "12" }
+    ]
   }
 ]
