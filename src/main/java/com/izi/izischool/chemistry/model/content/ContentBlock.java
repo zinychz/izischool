@@ -19,6 +19,7 @@ import lombok.Setter;
         @JsonSubTypes.Type(value = ImageBlock.class, name = "IMAGE")
 })
 public abstract class ContentBlock {
+    public static final String IZI_DELIM_BLOCK = ":izi_block:";
     @JsonIgnore
     public abstract ContentBlockType getType(); // text, image, etc.
 }
