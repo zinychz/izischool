@@ -16,23 +16,19 @@
       ]
     },
     "question": {
-      "type": "TEXT_INPUT",
-      "content": {
-        "blocks": [
-          {
-            "type": "TEXT",
-            "value": {
-              "localized": {
-                "RU": "Теперь попытайтесь ответить на вопросы ниже, а затем проверьте их, обратившись к следующей рубрике."
-              }
-            },
-            "format": "PLAIN"
-          }
-        ]
-      },
       "inputs": [
         {
+          "type": "TEXT",
           "id": "a",
+          "text": {
+            "localized": {
+              "RU": "Теперь попытайтесь ответить на вопросы ниже, а затем проверьте их, обратившись к следующей рубрике."
+            }
+          }
+        },
+        {
+          "type": "INPUT",
+          "id": "b",
           "text": {
             "localized": {
               "RU": "Как называется вода в твердом состоянии?"
@@ -40,7 +36,8 @@
           }
         },
         {
-          "id": "b",
+          "type": "INPUT",
+          "id": "c",
           "text": {
             "localized": {
               "RU": "Как называется вода в газообразном состоянии?"
@@ -80,20 +77,17 @@
       ]
     },
     "question": {
-      "type": "INFO_ONLY",
-      "content": {
-        "blocks": [
-          {
-            "type": "TEXT",
-            "value": {
-              "localized": {
-                "RU": "Продолжайте чтение со следующей рубрики."
-              }
-            },
-            "format": "PLAIN"
+      "inputs": [
+        {
+          "type": "TEXT",
+          "id": "a",
+          "text": {
+            "localized": {
+              "RU": "Продолжайте чтение со следующей рубрики."
+            }
           }
-        ]
-      },
+        }
+      ],
       "correctAnswer": null,
       "explanation": null
     },
@@ -126,22 +120,18 @@
       ]
     },
     "question": {
-      "type": "CHOICE",
-      "content": {
-        "blocks": [
-          {
-            "type": "TEXT",
-            "value": {
-              "localized": {
-                "RU": "Какое из следующих утверждений правильно?"
-              }
-            },
-            "format": "PLAIN"
-          }
-        ]
-      },
-      "options": [
+      "inputs": [
         {
+          "type": "TEXT",
+          "id": "a",
+          "text": {
+            "localized": {
+              "RU": "Какое из следующих утверждений правильно?"
+            }
+          }
+        },
+        {
+          "type": "CHOICE",
           "id": "43",
           "text": {
             "localized": {
@@ -150,6 +140,7 @@
           }
         },
         {
+          "type": "CHOICE",
           "id": "29",
           "text": {
             "localized": {

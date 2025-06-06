@@ -2,7 +2,7 @@ package com.izi.izischool.chemistry.dto;
 
 import com.izi.izischool.chemistry.model.content.Content;
 import com.izi.izischool.chemistry.model.step.Key;
-import com.izi.izischool.chemistry.model.step.Question;
+import com.izi.izischool.chemistry.model.question.Question;
 import com.izi.izischool.chemistry.model.step.Transition;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

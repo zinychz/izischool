@@ -29,6 +29,7 @@ public class Constants {
 
         public static final String IZI_ID = ":izi_id:";
         public static final String IZI_TYPE = ":izi_type:";
+        public static final String IZI_FORMAT = ":izi_format:";
     }
 
     public static class ROLE {

@@ -2,6 +2,7 @@ package com.izi.izischool.chemistry.model.step;
 
 import com.izi.izischool.chemistry.model.content.Content;
 import com.izi.izischool.chemistry.common.util.TextUtils;
+import com.izi.izischool.chemistry.model.question.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

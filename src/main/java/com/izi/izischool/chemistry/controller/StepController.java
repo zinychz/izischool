@@ -5,7 +5,7 @@ import com.izi.izischool.chemistry.dto.AnswerResponse;
 import com.izi.izischool.chemistry.dto.StepRequest;
 import com.izi.izischool.chemistry.mapper.StepMapper;
 import com.izi.izischool.chemistry.model.step.Step;
-import com.izi.izischool.chemistry.model.step.QuestionType;
+import com.izi.izischool.chemistry.model.question.QuestionType;
 import com.izi.izischool.chemistry.service.StepService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -71,26 +71,27 @@ public class StepController {
 
     @PostMapping("/{id}/check")
     public AnswerResponse checkAnswer(@PathVariable String id, @RequestBody AnswerRequest request) {
-        Step step = stepService.getStepByIdOrByKey(id);
-        if (step == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Шаг не найден");
-        }
-
-        boolean correct = true;
-        if (step.getQuestion() != null && step.getQuestion().getCorrectAnswer() != null
-                && !step.getQuestion().getCorrectAnswer().getLocalized().isEmpty() &&
-                (QuestionType.CHOICE == step.getQuestion().getType() || QuestionType.TEXT_INPUT == step.getQuestion().getType())) {
-            correct = step.getQuestion().getCorrectAnswer().getLocalized().entrySet().iterator().next().getValue()
-                    .equalsIgnoreCase(request.getAnswer().trim());
-        }
-
-        Map<String, String> answers = step.getQuestion() != null && QuestionType.CHOICE == step.getQuestion().getType() ?
-                Map.of(QuestionType.CHOICE.name(), request.getAnswer()) : Map.of(request.getAnswer(), request.getAnswer());
-
-        return new AnswerResponse(correct, step.getQuestion() == null ? null :
-                step.getQuestion().getExplanation() == null ? null :
-                        step.getQuestion().getExplanation().getLocalized().isEmpty() ? null :
-                                step.getQuestion().getExplanation().getLocalized().entrySet().iterator().next().getValue(),
-                step.getNextStepId(answers));
+        return new AnswerResponse(true, null, null);
+//        Step step = stepService.getStepByIdOrByKey(id);
+//        if (step == null) {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Шаг не найден");
+//        }
+//
+//        boolean correct = true;
+//        if (step.getQuestion() != null && step.getQuestion().getCorrectAnswer() != null
+//                && !step.getQuestion().getCorrectAnswer().getLocalized().isEmpty() &&
+//                (QuestionType.CHOICE == step.getQuestion().getType() || QuestionType.INPUT == step.getQuestion().getType())) {
+//            correct = step.getQuestion().getCorrectAnswer().getLocalized().entrySet().iterator().next().getValue()
+//                    .equalsIgnoreCase(request.getAnswer().trim());
+//        }
+//
+//        Map<String, String> answers = step.getQuestion() != null && QuestionType.CHOICE == step.getQuestion().getType() ?
+//                Map.of(QuestionType.CHOICE.name(), request.getAnswer()) : Map.of(request.getAnswer(), request.getAnswer());
+//
+//        return new AnswerResponse(correct, step.getQuestion() == null ? null :
+//                step.getQuestion().getExplanation() == null ? null :
+//                        step.getQuestion().getExplanation().getLocalized().isEmpty() ? null :
+//                                step.getQuestion().getExplanation().getLocalized().entrySet().iterator().next().getValue(),
+//                step.getNextStepId(answers));
     }
 }
